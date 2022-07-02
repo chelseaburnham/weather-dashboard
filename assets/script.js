@@ -24,11 +24,12 @@ searchButton.addEventListener("click", function(event) {
     var userInput = document.querySelector(".form-control").value
 
     if (userInput == "") {
-        return;
+        userInput = document.getElementsByName('city')[0].placeholder = 'Please enter a city';
     } else {
         newCity.textContent = userInput
         buttonContainer.append(newCity)
-    } ClearFields()
+    } ClearFields();
+    localStorage.setItem("city", userInput)
 })
 
 // clears the input field after search button is clicked
@@ -36,6 +37,15 @@ function ClearFields() {
     document.querySelector(".form-control").value = "";
 }
 
-function localStorage() {
+//displays info from local storage to the page
+function displayStorage() {
+    var userInput = document.querySelector(".form-control").value
+    var buttonContainer = document.querySelector(".button-container")
+    // userInput = localStorage.getItem("city")
+    for (var i=0; i < userInput.length; i++) {
+        userInput = localStorage.getItem("city")
+    }
 
 }
+
+displayStorage()
