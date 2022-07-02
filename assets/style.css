@@ -15,3 +15,15 @@ add class using JS
 .snowy {
 
 }
+
+.extra-text {
+    color: red;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
