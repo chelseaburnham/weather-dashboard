@@ -13,38 +13,37 @@
 </head>
 <body>
     <header class="jumbotron jumbotron-fluid bg-dark">
-        <h1 class="display-6 text-center text-light">Weather Dashboard</h1>
+        <h1 class="display-6 text-center text-light" style="font-family: 'Chelsea Market', cursive;">Weather Dashboard</h1>
         <h3 id="date-heading" class="text-center text-light"></h3>
     </header> 
     <main class="container">
         <section class="row">
             <div class="col-md-3" id="search-container">
-                <h2>Search for a city:</h2>
+                <h2 style="font-family: 'Chelsea Market', cursive; text-align: center;">Search for a city</h2>
                 <input class="form-control" name="city" type="text" placeholder="City Name">
                 <button type="button" class="btn btn-secondary btn-lg btn-block mt-3">Search</button>
                 <hr class="bg-dark">
             </div>
             <div class="col-md-9 border border-dark mb-3" id="weather-container" style="background-color: lightgray;">
-                <h3 id="city-name-heading"><span id="icon-image"></span></h3>
-                <ul id="weather-container-data">
-                    <li>Temperature: <span id="temperature-data"></span></li>
-                    <li>Wind: <span id="wind-data"></span></li>
-                    <li>Humidity: <span id="humidity-data"></span></li>
-                    <li>UVI: <span id="uvi-data"></span></li>
+                <h3 id="city-name-heading" style="text-align: center; font-size: 36px;"><span id="icon-image"></span></h3><br>
+                <ul id="weather-container-data" class="row">
+                    <li class="col-md-3" style="text-align: center; font-size: 24px;">Temperature: <br><span id="temperature-data"></span></li>
+                    <li class="col-md-3" style="text-align: center; font-size: 24px;">Wind: <br><span id="wind-data"></span></li>
+                    <li class="col-md-3" style="text-align: center; font-size: 24px;">Humidity: <br><span id="humidity-data"></span></li>
+                    <li class="col-md-3" style="text-align: center; font-size: 24px;">UVI: <br><span id="uvi-data"></span></li>
                 </ul>
             </div>
         </section>
         <section class="row">
             <div class="col-md-3 button-container" style="display: flex; align-items: center; flex-direction: column; gap: 5px; " ></div>
             <div class="col-md-9 forecast">
-                <h3 id="forecast-container-heading">5-Day Forecast:</h3>
+                <h3 id="forecast-container-heading" style="text-align: center;">5-Day Forecast:</h3><br>
                     <div class="row d-flex justify-content-center" style="gap:20px;">
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light">Day 1</div>
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light">Day 2</div>
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light">Day 3</div>
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light">Day 4</div>
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light">Day 5</div>
-                    </div>
+                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 1: <span id="day-one"></div>
+                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 2: <span id="day-two"></div>
+                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 3: <span id="day-three"></div>
+                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 4: <span id="day-four"></div>
+                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 5: <span id="day-five"></div>
             </div>
         </section>
     </main>

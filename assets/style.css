@@ -1,10 +1,7 @@
-* {
-    font-family: 'Chelsea Market', cursive;
-}
-
 ul {
     list-style: none;
-    display: flex;
+    /* display: flex;
     align-items: flex-start;
-    flex-direction: column;
+    flex-direction: column; */
+    
 }
