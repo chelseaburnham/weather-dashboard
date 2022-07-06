@@ -26,11 +26,11 @@
             </div>
             <div class="col-md-9 border border-dark mb-3" id="weather-container" style="background-color: lightgray;">
                 <h3 id="city-name-heading" style="text-align: center; font-size: 36px;"><span id="icon-image"></span></h3><br>
-                <ul id="weather-container-data" class="row">
-                    <li class="col-md-3" style="text-align: center; font-size: 24px;">Temperature: <br><span id="temperature-data"></span></li>
-                    <li class="col-md-3" style="text-align: center; font-size: 24px;">Wind: <br><span id="wind-data"></span></li>
-                    <li class="col-md-3" style="text-align: center; font-size: 24px;">Humidity: <br><span id="humidity-data"></span></li>
-                    <li class="col-md-3" style="text-align: center; font-size: 24px;">UVI: <br><span id="uvi-data"></span></li>
+                <ul id="weather-container-data" class="row" style="list-style: none;">
+                    <li class="col-md-3" style="text-align: center; font-size: 24px;" id="temperature-data"></li>
+                    <li class="col-md-3" style="text-align: center; font-size: 24px;" id="wind-data"></li>
+                    <li class="col-md-3" style="text-align: center; font-size: 24px;" id="humidity-data"></li>
+                    <li class="col-md-3" style="text-align: center; font-size: 24px;" id="uvi-data"></li>
                 </ul>
             </div>
         </section>
@@ -39,11 +39,37 @@
             <div class="col-md-9 forecast">
                 <h3 id="forecast-container-heading" style="text-align: center;">5-Day Forecast:</h3><br>
                     <div class="row d-flex justify-content-center" style="gap:20px;">
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 1: <span id="day-one"></div>
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 2: <span id="day-two"></div>
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 3: <span id="day-three"></div>
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 4: <span id="day-four"></div>
-                        <div class="col-lg-2 col-md-6 border border-dark bg-dark text-light" style="font-size: 24px; text-align: center;">Day 5: <span id="day-five"></div>
+                        <div class="col-lg-2 col-md-6" style="font-size: 20px; text-align: center;">
+                            <h3 class="bg-dark text-light" id="day1Date"></h3> 
+                            <p id="day1Temp"></p>
+                            <p id="day1Wind"></p>
+                            <p id="day1Humidity"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-6" style="font-size: 20px; text-align: center;">
+                            <h3 class="bg-dark text-light" id="day2Date"></h3> 
+                            <p id="day2Temp"></p>
+                            <p id="day2Wind"></p>
+                            <p id="day2Humidity"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-6" style="font-size: 20px; text-align: center;">
+                            <h3 class="bg-dark text-light" id="day3Date"></h3> 
+                            <p id="day3Temp"></p>
+                            <p id="day3Wind"></p>
+                            <p id="day3Humidity"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-6" style="font-size: 20px; text-align: center;">
+                            <h3 class="bg-dark text-light" id="day4Date"></h3> 
+                            <p id="day4Temp"></p>
+                            <p id="day4Wind"></p>
+                            <p id="day4Humidity"></p>
+                        </div>
+                        <div class="col-lg-2 col-md-6" style="font-size: 20px; text-align: center;">
+                            <h3 class="bg-dark text-light" id="day5Date"></h3> 
+                            <p id="day5Temp"></p>
+                            <p id="day5Wind"></p>
+                            <p id="day5Humidity"></p>
+                        </div>
+                        </div>
             </div>
         </section>
     </main>

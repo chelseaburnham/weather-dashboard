@@ -1,12 +1,22 @@
 # weather-dashboard
 
-Column 1
-    Row 1: input form (should include autocomplete city information) with search button
-    Row 2: empty div that will append cities as they are searched using local storage
 
-Column 2
-    Row 1:  empty div that will append the name of the city, date, icon that represents the weather condition; temperature, humidity, wind speed, UV index (should have a color that indicates if the weather is favorable, moderate, or sever)
-    Row 2: empty div that will append a 5 day forecast and includes the date, icon that represents the weather condition, temperature, wind speed, humidity 
+
+still need search history using local storage to persist as button that can reload info
+
+still need color to represent favorable, moderate, or severe uvi
+
+need icon in weather container and each forecast day
+
+
+
+
+
+1-3 favorable green
+4-6 moderate yellow
+7-9 severe 
+
+
 
 
 //adds items to local storage and appends them to the button container
