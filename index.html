@@ -14,6 +14,7 @@
 <body>
     <header class="jumbotron jumbotron-fluid bg-dark">
         <h1 class="display-6 text-center text-light">Weather Dashboard</h1>
+        <h3 id="date-heading" class="text-center text-light"></h3>
     </header> 
     <main class="container">
         <section class="row">
@@ -24,14 +25,12 @@
                 <hr class="bg-dark">
             </div>
             <div class="col-md-9 border border-dark mb-3" id="weather-container" style="background-color: lightgray;">
-                <h3 id="city-name-heading"></h3>
-                <h3 id="date-heading"></h3>
+                <h3 id="city-name-heading"><span id="icon-image"></span></h3>
                 <ul id="weather-container-data">
-                    <li id="icon">Icon:</li>
-                    <li id="temperature-data">Temperature:</li>
-                    <li id="wind-data">Wind:</li>
-                    <li id="humidity-data">Humidity:</li>
-                    <li id="uv-index">UVI:</li>
+                    <li>Temperature: <span id="temperature-data"></span></li>
+                    <li>Wind: <span id="wind-data"></span></li>
+                    <li>Humidity: <span id="humidity-data"></span></li>
+                    <li>UVI: <span id="uvi-data"></span></li>
                 </ul>
             </div>
         </section>
