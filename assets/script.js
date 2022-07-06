@@ -1,12 +1,8 @@
-//appends date
-var date = moment().format("MMM Do, YYYY");
-var dateContainer = document.getElementById("date-heading")
-dateContainer.append(date)
-
+//adds event listener to search button
 var searchButton = document.querySelector(".btn")
 searchButton.addEventListener("click", currentWeatherData)
 
-// //api fetch by city
+//api fetch by city - appends weather data
 var userInput = document.querySelector(".form-control")
 function currentWeatherData() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput.value}&units=imperial&appid=7acb10b31a225ce5f6e678b28717604c`)
@@ -23,7 +19,7 @@ function currentWeatherData() {
     })
 }
 
-//api fetch by lat and lon
+//api fetch by lat and lon - appends forecast data
 function latLonData(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=imperial&appid=7acb10b31a225ce5f6e678b28717604c`)
     .then(response => response.json())
@@ -38,10 +34,11 @@ function latLonData(lat, lon) {
     })
 }
 
-//appends city name to top of weather container
+//appends city name and date to top of weather container
 function appendCityName(data) {
+    var date = moment().format("MM-DD-YYYY");
     cityNameData = document.getElementById("city-name-heading")
-    cityNameData.textContent = data.name
+    cityNameData.textContent = data.name + "  " + date
 }
 
 //appends temperature inside weather container
@@ -68,6 +65,7 @@ function appendUVI(data) {
     uviData.textContent = "UV Index: " + data.current.uvi
 }
 
+//appends day1 forecast info
 function appendDay1(data) {
     tomorrow = moment().add(1, 'days').format("MM-DD");
     day1Date = document.getElementById("day1Date")
@@ -80,6 +78,7 @@ function appendDay1(data) {
     day1Humidity.textContent = "Humidity: " + data.daily[0].humidity + "%"
 }
 
+//appends day2 forecast info
 function appendDay2(data) {
     day2Moment = moment().add(2, 'days').format("MM-DD");
     day2Date = document.getElementById("day2Date")
@@ -92,6 +91,7 @@ function appendDay2(data) {
     day2Humidity.textContent = "Humidity: " + data.daily[1].humidity + "%"
 }
 
+//appends day3 forecast info
 function appendDay3(data) {
     day3Moment = moment().add(3, 'days').format("MM-DD");
     day3Date = document.getElementById("day3Date")
@@ -104,6 +104,7 @@ function appendDay3(data) {
     day3Humidity.textContent = "Humidity: " + data.daily[2].humidity + "%"
 }
 
+//appends day4 forecast info
 function appendDay4(data) {
     day4Moment = moment().add(4, 'days').format("MM-DD");
     day4Date = document.getElementById("day4Date")
@@ -116,6 +117,7 @@ function appendDay4(data) {
     day4Humidity.textContent = "Humidity: " + data.daily[3].humidity + "%"
 }
 
+//appends day5 forecast info
 function appendDay5(data) {
     day5Moment = moment().add(5, 'days').format("MM-DD");
     day5Date = document.getElementById("day5Date")
@@ -128,6 +130,7 @@ function appendDay5(data) {
     day5Humidity.textContent = "Humidity: " + data.daily[4].humidity + "%"
 }
 
+//changes color of UV Index depending on if it's favorable, moderate, or severe
 function uvIndex(data) {
     if (data.current.uvi >= 0 && data.current.uvi <= 3) {
         uviData = document.getElementById("uvi-data")
@@ -140,9 +143,6 @@ function uvIndex(data) {
         uviData.style.backgroundColor = "red"
     }
 }
-
-
-
 
 // clears the input field after search button is clicked
 function clearFields() {
