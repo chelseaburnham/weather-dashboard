@@ -33,6 +33,11 @@ function latLonData(lat, lon) {
         appendDay5(data)
         uvIndex(data)
         appendIcon(data)
+        appendIconDay1(data)
+        appendIconDay2(data)
+        appendIconDay3(data)
+        appendIconDay4(data)
+        appendIconDay5(data)
     })
 }
 
@@ -95,6 +100,16 @@ function appendDay1(data) {
     day1Humidity.textContent = "Humidity: " + data.daily[0].humidity + "%"
 }
 
+//appends icon to day 1
+var day1Icon = document.getElementById("day1Icon")
+var day1Image = document.createElement("img")
+function appendIconDay1(data) {
+    icon1 = data.daily[0].weather[0].icon
+    day1Image.src = "http://openweathermap.org/img/wn/" + icon1 + "@2x.png"
+    day1Image.style = "width:50px"
+    day1Icon.append(day1Image)
+}
+
 //appends day2 forecast info
 function appendDay2(data) {
     day2Moment = moment().add(2, 'days').format("MM-DD");
@@ -106,6 +121,16 @@ function appendDay2(data) {
     day2Wind.textContent = "Wind Speed: " + data.daily[1].wind_speed + " mph"
     day2Humidity = document.getElementById("day2Humidity")
     day2Humidity.textContent = "Humidity: " + data.daily[1].humidity + "%"
+}
+
+//appends icon to day 2
+var day2Icon = document.getElementById("day2Icon")
+var day2Image = document.createElement("img")
+function appendIconDay2(data) {
+    icon2 = data.daily[1].weather[0].icon
+    day2Image.src = "http://openweathermap.org/img/wn/" + icon2 + "@2x.png"
+    day2Image.style = "width:50px"
+    day2Icon.append(day2Image)
 }
 
 //appends day3 forecast info
@@ -121,6 +146,16 @@ function appendDay3(data) {
     day3Humidity.textContent = "Humidity: " + data.daily[2].humidity + "%"
 }
 
+//appends icon to day 3
+var day3Icon = document.getElementById("day3Icon")
+var day3Image = document.createElement("img")
+function appendIconDay3(data) {
+    icon3 = data.daily[2].weather[0].icon
+    day3Image.src = "http://openweathermap.org/img/wn/" + icon3 + "@2x.png"
+    day3Image.style = "width:50px"
+    day3Icon.append(day3Image)
+}
+
 //appends day4 forecast info
 function appendDay4(data) {
     day4Moment = moment().add(4, 'days').format("MM-DD");
@@ -134,6 +169,16 @@ function appendDay4(data) {
     day4Humidity.textContent = "Humidity: " + data.daily[3].humidity + "%"
 }
 
+//appends icon to day 4
+var day4Icon = document.getElementById("day4Icon")
+var day4Image = document.createElement("img")
+function appendIconDay4(data) {
+    icon4 = data.daily[3].weather[0].icon
+    day4Image.src = "http://openweathermap.org/img/wn/" + icon4 + "@2x.png"
+    day4Image.style = "width:50px"
+    day4Icon.append(day4Image)
+}
+
 //appends day5 forecast info
 function appendDay5(data) {
     day5Moment = moment().add(5, 'days').format("MM-DD");
@@ -145,6 +190,16 @@ function appendDay5(data) {
     day5Wind.textContent = "Wind Speed: " + data.daily[4].wind_speed + " mph"
     day5Humidity = document.getElementById("day5Humidity")
     day5Humidity.textContent = "Humidity: " + data.daily[4].humidity + "%"
+}
+
+//appends icon to day 5
+var day5Icon = document.getElementById("day5Icon")
+var day5Image = document.createElement("img")
+function appendIconDay5(data) {
+    icon5 = data.daily[4].weather[0].icon
+    day5Image.src = "http://openweathermap.org/img/wn/" + icon5 + "@2x.png"
+    day5Image.style = "width:50px"
+    day5Icon.append(day5Image)
 }
 
 //changes color of UV Index depending on if it's favorable, moderate, or severe
