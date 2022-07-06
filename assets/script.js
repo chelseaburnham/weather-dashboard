@@ -16,6 +16,7 @@ function currentWeatherData() {
         appendWind(data)
         appendHumidity(data)
         clearFields()
+        clearIcon()
     })
 }
 
@@ -31,7 +32,23 @@ function latLonData(lat, lon) {
         appendDay4(data)
         appendDay5(data)
         uvIndex(data)
+        appendIcon(data)
     })
+}
+
+//appends icon to weather container
+var mainIcon = document.getElementById("main-icon")
+var mainImage = document.createElement("img")
+function appendIcon(data) {
+    icon = data.current.weather[0].icon
+    mainImage.src = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
+    mainImage.style = "width:50px"
+    mainIcon.append(mainImage)
+}
+
+//clears icon with each new search
+function clearIcon() {
+    mainImage.src = ""
 }
 
 //appends city name and date to top of weather container
@@ -148,4 +165,7 @@ function uvIndex(data) {
 function clearFields() {
     document.querySelector(".form-control").value = "";
 }
+
+
+
 
