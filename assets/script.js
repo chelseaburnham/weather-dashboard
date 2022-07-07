@@ -17,6 +17,7 @@ function currentWeatherData() {
         appendHumidity(data);
         clearFields();
         clearIcon();
+        // appendButtons()
     })
 
     repeat = false
@@ -26,9 +27,16 @@ function currentWeatherData() {
         }
     }
     if (repeat == false) {
-    storedData.unshift(userInput.value)
-    localStorage.setItem("storedData", JSON.stringify(storedData))
-}
+        storedData.push(userInput.value)
+        localStorage.setItem("storedData", JSON.stringify(storedData))
+        appendButtons()
+        }
+    function appendButtons() {
+        buttonContainer = document.querySelector(".button-container")
+        newButton = document.createElement("button")
+        newButton.textContent = storedData[i]
+        buttonContainer.append(newButton)
+    }
 };
 
 //api fetch by lat and lon - appends forecast data
