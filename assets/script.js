@@ -8,38 +8,38 @@ function currentWeatherData() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput.value}&units=imperial&appid=7acb10b31a225ce5f6e678b28717604c`)
       .then(response => response.json())
       .then(data => {console.log(data);
-        lat = data.coord.lat
-        lon = data.coord.lon
-        latLonData(lat, lon)
-        appendCityName(data)
-        appendTemperature(data)
-        appendWind(data)
-        appendHumidity(data)
-        clearFields()
-        clearIcon()
+        lat = data.coord.lat;
+        lon = data.coord.lon;
+        latLonData(lat, lon);
+        appendCityName(data);
+        appendTemperature(data);
+        appendWind(data);
+        appendHumidity(data);
+        clearFields();
+        clearIcon();
     })
-}
+};
 
 //api fetch by lat and lon - appends forecast data
 function latLonData(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=imperial&appid=7acb10b31a225ce5f6e678b28717604c`)
     .then(response => response.json())
     .then(data => {console.log(data)
-        appendUVI(data)
-        appendDay1(data)
-        appendDay2(data)
-        appendDay3(data)
-        appendDay4(data)
-        appendDay5(data)
-        uvIndex(data)
-        appendIcon(data)
-        appendIconDay1(data)
-        appendIconDay2(data)
-        appendIconDay3(data)
-        appendIconDay4(data)
-        appendIconDay5(data)
+        appendUVI(data);
+        appendDay1(data);
+        appendDay2(data);
+        appendDay3(data);
+        appendDay4(data);
+        appendDay5(data);
+        uvIndex(data);
+        appendIcon(data);
+        appendIconDay1(data);
+        appendIconDay2(data);
+        appendIconDay3(data);
+        appendIconDay4(data);
+        appendIconDay5(data);
     })
-}
+};
 
 //appends icon to weather container
 var mainIcon = document.getElementById("main-icon")
@@ -220,7 +220,4 @@ function uvIndex(data) {
 function clearFields() {
     document.querySelector(".form-control").value = "";
 }
-
-
-
 
