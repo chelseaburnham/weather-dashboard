@@ -18,6 +18,17 @@ function currentWeatherData() {
         clearFields();
         clearIcon();
     })
+
+    repeat = false
+    for (var i=0; i<storedData.length; i++) {
+        if(userInput.value == storedData[i]) {
+            repeat = true
+        }
+    }
+    if (repeat == false) {
+    storedData.unshift(userInput.value)
+    localStorage.setItem("storedData", JSON.stringify(storedData))
+}
 };
 
 //api fetch by lat and lon - appends forecast data
@@ -219,5 +230,10 @@ function uvIndex(data) {
 // clears the input field after search button is clicked
 function clearFields() {
     document.querySelector(".form-control").value = "";
+}
+
+var storedData = []
+if(JSON.parse(localStorage.getItem("storedData") !== null)){
+    storedData = JSON.parse(localStorage.getItem("storedData"))
 }
 
